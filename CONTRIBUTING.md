@@ -14,7 +14,7 @@ questions right away.
 
 **Issue: I cannot connect to the visdom server.**
 First, check that your visdom server is running. You can start the visdom server
-via `python -m visdom.server`. Try restarting the server.
+via ` python -m visdom.server `. Try restarting the server.
 
 If your visdom server is running, but you don't see anything when trying to
 access visdom in your browser, please check that your network settings don't
@@ -39,7 +39,7 @@ if you are installing from source or using another method of installing
 dependencies, the folder to use may be different.
 
 * View the `download.sh` script and either execute it to automatically download the resources or manually download all the files that it requests.
-
+vi
 * Restart the visdom server, try again, and check the JavaScript Console to
 confirm all dependencies are found.
 
@@ -70,6 +70,17 @@ pip uninstall visdom && pip install -e .
 ```
 For some pip installs, this approach does not always properly link the visdom
 module. In that case, try running `python setup.py install` instead.
+
+**Issue: Error related to `pkg_resources` during setup in Windows Os:**
+While setting up the project, you may encounter the following error:
+ModuleNotFoundError: No module named 'pkg_resources'
+
+This typically happens when the required dependency is not installed or properly configured.
+The `pkg_resources` module is part of the `setuptools` package. If it is missing, install or upgrade setuptools using:
+pip install --upgrade setuptools
+
+After installing, restart your environment and try running the project again.
+If the issue persists, ensure that all dependencies are installed correctly from the requirements file.
 
 
 ## How to report an issue:
