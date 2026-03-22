@@ -71,7 +71,7 @@ pip uninstall visdom && pip install -e .
 For some pip installs, this approach does not always properly link the visdom
 module. In that case, try running `python setup.py install` instead.
 
-**Issue: Error related to `pkg_resources` during setup in Windows Os:**
+**Issue: Error related to `pkg_resources` during setup in Windows OS:**
 While setting up the project, you may encounter the following error:
 ModuleNotFoundError: No module named 'pkg_resources'
 
