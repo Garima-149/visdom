@@ -13,10 +13,12 @@
 
 import 'fetch';
 import 'rc-tree-select/assets/index.css';
-
+import './css/drop.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import ReactResizeDetector from 'react-resize-detector';
+
+import UserDropDown from './topbar/dropdown';
 
 import ApiContext from './api/ApiContext';
 import ApiProvider from './api/ApiProvider';
@@ -36,6 +38,7 @@ import EnvControls from './topbar/EnvControls';
 import FilterControls from './topbar/FilterControls';
 import ViewControls from './topbar/ViewControls';
 import WidthProvider from './Width';
+
 
 const ReactGridLayout = require('react-grid-layout');
 const jsonpatch = require('fast-json-patch');
@@ -849,11 +852,13 @@ const App = () => {
     onDisconnect,
   };
 
+  
   return (
     <div>
       {modals}
       <div className="navbar-form navbar-default">
-        <span className="navbar-brand visdom-title">visdom</span>
+        <span className="navbar-brand visdom-title">visdom0</span>
+       
         <span className="vertical-line" />
         &nbsp;&nbsp;
         {envControls}
@@ -864,8 +869,14 @@ const App = () => {
         <span
           style={{
             float: 'right',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+        
           }}
         >
+         
+          <UserDropDown/>
           {filterControl}
           &nbsp;&nbsp;
           {connectionIndicator}
